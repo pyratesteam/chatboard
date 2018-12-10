@@ -75,3 +75,4 @@ class Moderator(User):
         self._comment = comment
         self._can_delete = True
         return self._can_delete
+        
