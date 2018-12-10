@@ -61,3 +61,18 @@ class User:
     def to_string(self):
         return self.__str__()
 
+class Admin(Moderator):
+
+    def __init__(self, name):
+        super(admin, self).__init__(name)
+        self._name = name
+
+    def can_edit(self, comment):
+        self._comment = comment
+        self._can_edit = True
+        return self._can_edit
+
+    def can_delete(self, comment):
+        self._comment = comment
+        self._can_delete = True
+        return self._can_delete
