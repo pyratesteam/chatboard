@@ -61,6 +61,7 @@ class User:
     def to_string(self):
         return self.__str__()
 
+<<<<<<< HEAD
 class Moderator(User):
 
     def __init__(self, name):
@@ -75,4 +76,27 @@ class Moderator(User):
         self._comment = comment
         self._can_delete = True
         return self._can_delete
-        
+
+
+=======
+class Admin(Moderator):
+
+    def __init__(self, name):
+        super(admin, self).__init__(name)
+        self._name = name
+
+    def can_edit(self, comment):
+        self._comment = comment
+        self._can_edit = True
+        return self._can_edit
+>>>>>>> bbc087c3f9a0ea25a2e0c4ace02e713413ff0864
+
+    def can_delete(self, comment):
+        self._comment = comment
+        self._can_delete = True
+<<<<<<< HEAD
+        return self._can_delete
+
+=======
+        return self._can_delete
+>>>>>>> bbc087c3f9a0ea25a2e0c4ace02e713413ff0864
