@@ -61,3 +61,23 @@ class User:
     def to_string(self):
         return self.__str__()
 
+class Comment:
+
+   def __init__(self, author, message, replied_to = None):
+       self.author = author # object
+       self.message = message        
+       self.replied_to = replied_to # object
+       self.created_at = author.datetime.datetime.now()
+
+   def __repr__(self):
+       return ('{} - {}').format(self.message, self.author.name)
+
+   def __str__(self):
+       if self.replied_to is None:
+           return ('{} by {}').format(self.message, self.author.name)
+       else:
+           return ('{} by {} (replied to {})').format(self.message, self.author.name, 			self.replied_to.author.name)
+
+   def to_string(self):
+       return self.__str__()
+
