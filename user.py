@@ -62,6 +62,28 @@ class User:
         return self.__str__()
 
 <<<<<<< HEAD
+class Comment:
+
+   def __init__(self, author, message, replied_to = None):
+       self.author = author # object
+       self.message = message        
+       self.replied_to = replied_to # object
+       self.created_at = author.datetime.datetime.now()
+
+   def __repr__(self):
+       return ('{} - {}').format(self.message, self.author.name)
+
+   def __str__(self):
+       if self.replied_to is None:
+           return ('{} by {}').format(self.message, self.author.name)
+       else:
+           return ('{} by {} (replied to {})').format(self.message, self.author.name, self.replied_to.author.name)
+
+   def to_string(self):
+       return self.__str__()
+
+=======
+<<<<<<< HEAD
 class Moderator(User):
 
     def __init__(self, name):
@@ -100,3 +122,4 @@ class Admin(Moderator):
 =======
         return self._can_delete
 >>>>>>> bbc087c3f9a0ea25a2e0c4ace02e713413ff0864
+>>>>>>> 2fcec146a4c7b6348644bece363f429327d12226
